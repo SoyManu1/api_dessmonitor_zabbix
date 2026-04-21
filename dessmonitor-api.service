@@ -1,0 +1,35 @@
+# ============================================================
+#  SERVICIO SYSTEMD — Dessmonitor Middleware API
+#  Ubicación: /etc/systemd/system/dessmonitor-api.service
+#  ─────────────────────────────────────────────────────────
+#  Desarrollado por: Analista de Sistema II  Manuel Moya
+#  Empresa: TECNOVEN SERVICES C.A. Y VEIMESP C.A.
+#  Departamento de Soporte Técnico — Maracay, 2025
+#  ─────────────────────────────────────────────────────────
+#  Instalación:
+#    sudo cp dessmonitor-api.service /etc/systemd/system/
+#    sudo systemctl daemon-reload
+#    sudo systemctl enable dessmonitor-api
+#    sudo systemctl start dessmonitor-api
+#
+#  Comandos útiles:
+#    sudo systemctl status dessmonitor-api
+#    sudo systemctl restart dessmonitor-api
+#    sudo tail -f /var/log/dessmonitor.log
+# ============================================================
+
+[Unit]
+Description=Dessmonitor Middleware API - Nodo Palo Negro
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/opt/dessmonitor
+ExecStart=/usr/bin/python3 -m uvicorn api_dessmonitor:app --host 0.0.0.0 --port 8000
+Restart=always
+RestartSec=10
+StandardOutput=append:/var/log/dessmonitor.log
+StandardError=append:/var/log/dessmonitor.log
+
+[Install]
+WantedBy=multi-user.target
