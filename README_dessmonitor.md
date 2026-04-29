@@ -1,13 +1,5 @@
 # Dessmonitor → Ubuntu → Zabbix → Grafana
 ### Integración de Inversor Solar con Wi-Fi Plug Pro vía API Dessmonitor
-
----
-
-> **Desarrollado por:** Analista de Sistema II  Manuel Moya
-> **Empresa:** TECNOVEN SERVICES C.A. Y VEIMESP C.A.
-> **Departamento:** Soporte Técnico — Maracay, 2025
-> **Contacto:** Soportearagua@tecnovenca.net | +58 (424) 358-5386 / (416) 543-8925
-
 ---
 
 ## 🗺️ Arquitectura
@@ -189,21 +181,6 @@ sudo chown root:root /opt/dessmonitor/.env
 # El .gitignore ya lo excluye automáticamente
 ```
 
-### Qué subir a GitHub ✅
-```
-api_dessmonitor.py
-dessmonitor-api.service
-zbx_export_dessmonitor.yaml
-README_dessmonitor.md
-.gitignore
-```
-
-### Qué NO subir a GitHub ❌
-```
-.env                  ← contiene contraseñas
-env_dessmonitor.txt   ← contiene contraseñas
-```
-
 ---
 
 ## 🐙 GitHub — Primeros pasos
@@ -216,7 +193,4 @@ git remote add origin https://github.com/TU_USUARIO/dessmonitor-zabbix.git
 git push -u origin main
 ```
 
----
 
-*© 2025 TECNOVEN SERVICES C.A. Y VEIMESP C.A.*
-*Desarrollado por: Analista de Sistema II  Manuel Moya*
