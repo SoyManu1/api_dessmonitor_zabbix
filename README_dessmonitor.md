@@ -170,27 +170,4 @@ curl http://localhost:8000/dessmonitor/lastdata | python3 -m json.tool
 
 ---
 
-## 🔒 Seguridad y GitHub
-
-```bash
-# Proteger credenciales en el servidor
-sudo chmod 600 /opt/dessmonitor/.env
-sudo chown root:root /opt/dessmonitor/.env
-
-# En GitHub: NUNCA subir .env
-# El .gitignore ya lo excluye automáticamente
-```
-
----
-
-## 🐙 GitHub — Primeros pasos
-
-```bash
-git init
-git add api_dessmonitor.py dessmonitor-api.service zbx_export_dessmonitor.yaml README_dessmonitor.md .gitignore
-git commit -m "Integración Dessmonitor → Zabbix — by Analista de Sistema II Manuel Moya"
-git remote add origin https://github.com/TU_USUARIO/dessmonitor-zabbix.git
-git push -u origin main
-```
-
 
